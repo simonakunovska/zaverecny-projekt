@@ -1,0 +1,125 @@
+$color-primary:#004186;
+$color-secondary:rgba(123, 203, 100, 0.38);
+$default-font: "Montserrat",sans-serif;
+$body-text: 16px;
+$color-text:#ffffff;
+
+
+.menu-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:$color-primary;
+
+    &__logo{
+        height:129px;
+        width:470.46px;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        
+    }
+
+    &__item {
+        margin: 0px;
+        padding: 25px;
+        color:$color-text;
+        text-decoration:none;
+    }
+
+    a{
+        color:$color-text;
+        text-decoration:none;
+        font-size:20px;
+    }
+}
+
+
+
+.hero{
+    background-image: url('images/nature.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height:600px;
+    color: white;  
+    text-align: left; 
+    padding: 50px;
+
+    button{
+        background-color:$color-primary;
+        border-radius:10px;
+        padding:10px;
+        color:$color-text;
+    }
+}
+
+.menu-bottom{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:$color-secondary;
+
+   
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        
+    }
+
+    &__item {
+        margin: 0px;
+        padding: 25px;
+        color:$color-text;
+        text-decoration:none;
+    }
+
+    a{
+        color:$color-primary;
+        text-decoration:none;
+        font-size:20px;
+    }
+}
+
+.menu-footer{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:$color-secondary;
+
+   
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display:flex;
+        
+    }
+
+    &__item {
+        margin: 0px;
+        padding: 25px;
+        color:$color-text;
+        text-decoration:none;
+    }
+
+    a{
+        color:$color-primary;
+        text-decoration:none;
+        font-size:20px;
+    }
+
+    &__contact{
+        display:flex;
+        flex-direction:column;
+
+
+    }
+}

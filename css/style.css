@@ -1,0 +1,95 @@
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004186;
+}
+.menu-top__logo {
+  height: 129px;
+  width: 470.46px;
+}
+.menu-top__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.menu-top__item {
+  margin: 0px;
+  padding: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-top a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.hero {
+  background-image: url("images/nature.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  color: white;
+  text-align: left;
+  padding: 50px;
+}
+.hero button {
+  background-color: #004186;
+  border-radius: 10px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.menu-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(123, 203, 100, 0.38);
+}
+.menu-bottom__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.menu-bottom__item {
+  margin: 0px;
+  padding: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-bottom a {
+  color: #004186;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(123, 203, 100, 0.38);
+}
+.menu-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.menu-footer__item {
+  margin: 0px;
+  padding: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-footer a {
+  color: #004186;
+  text-decoration: none;
+  font-size: 20px;
+}
+.menu-footer__contact {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */
