@@ -25,11 +25,15 @@ a{
 
 .menu-top{
     background-color:$color-primary;
-
-    .menu__checkbox{
-        position:absolute;
-        left:-9999px;
     
+   
+ 
+   
+
+     .menu__checkbox{
+         position:absolute;
+         left:-9999px;
+     }
     
      &__list{
         display:none;
@@ -50,12 +54,12 @@ a{
         color:white;
     }  
 
-    .menu__checkbox:checked ~ .menu__list {
+    .menu__checkbox:checked ~ .menu-top__list {
         display:block;
     }
 
     @media screen and (min-width:799px){
-        .menu__checkbox:checked ~ .menu__list {
+        .menu__checkbox:checked ~ .menu-top__list {
             display:block;
         }
     }
@@ -65,27 +69,31 @@ a{
             display:none;
         }
     
-        .menu-top__list{
+        &__list{
             display:flex;
             margin-left: 80px;    
             padding: 0;
             list-style:none;
         }
     
-        .menu-top__item{
+        &__item{
             padding: 2rem 1.5rem;
             color:$color-text;
             text-decoration:none;
+
+                border-bottom: none;
+        
         }
     }
 
-    }
+   
 
 
     @media screen and (min-width:800px){
     display:flex;
     justify-content: center;
     align-items: center;
+    
     
 
     &__logo{
@@ -109,7 +117,7 @@ a{
 
 
 .hero{
-    background-image: url('images/nature.jpg');
+    background-image: url('../images/nature.jpg');
     background-size: cover; 
     background-position: center; 
     height:600px;
