@@ -1,41 +1,109 @@
-$color-primary:#004186;
+$color-primary:#02458C;
 $color-secondary:rgba(123, 203, 100, 0.38);
-$default-font: "Montserrat",sans-serif;
+$color-important: #29B33F;
+$default-font: "Roboto",sans-serif;
 $body-text: 16px;
 $color-text:#ffffff;
 
 
+$spacer: 1rem;
+
+
+body{
+    margin:0;
+    font-family:$default-font;
+}
+
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+a{
+    font-weight:bold;
+}
+
 .menu-top{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
     background-color:$color-primary;
+
+    .menu__checkbox{
+        position:absolute;
+        left:-9999px;
+    
+    
+     &__list{
+        display:none;
+        margin:0;
+        padding:0;
+        list-style:none;
+        background-color:$color-primary;
+    }
+    
+    &__item{
+        border-bottom: 1px solid white;
+    }
+    
+    &__link{
+        display:block;
+        padding:15px;
+        text-decoration:none;
+        color:white;
+    }  
+
+    .menu__checkbox:checked ~ .menu__list {
+        display:block;
+    }
+
+    @media screen and (min-width:799px){
+        .menu__checkbox:checked ~ .menu__list {
+            display:block;
+        }
+    }
+
+    @media screen and (min-width:800px){
+        .menu__toggler{
+            display:none;
+        }
+    
+        .menu-top__list{
+            display:flex;
+            margin-left: 80px;    
+            padding: 0;
+            list-style:none;
+        }
+    
+        .menu-top__item{
+            padding: 2rem 1.5rem;
+            color:$color-text;
+            text-decoration:none;
+        }
+    }
+
+    }
+
+
+    @media screen and (min-width:800px){
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
 
     &__logo{
         height:129px;
         width:470.46px;
+       
     }
 
-    &__list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display:flex;
-        
-    }
-
-    &__item {
-        margin: 0px;
-        padding: 25px;
-        color:$color-text;
-        text-decoration:none;
-    }
 
     a{
         color:$color-text;
         text-decoration:none;
-        font-size:20px;
+        font-size:16px;
     }
+
+   
+}
+
 }
 
 
@@ -58,32 +126,30 @@ $color-text:#ffffff;
 }
 
 .menu-bottom{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color:$color-secondary;
-
    
+    background-color:$color-secondary;
 
     &__list {
         list-style: none;
-        margin: 0;
+        justify-content:center;
         padding: 0;
-        display:flex;
+        display: grid;
+        grid-template-columns: repeat(5, auto); /* Vytvoříme 5 sloupců s rovnoměrným rozložením */
+        gap: 0px; /* mezery mezi položkami menu */
         
     }
 
     &__item {
         margin: 0px;
-        padding: 25px;
+        padding: 2rem 1.5rem;
         color:$color-text;
         text-decoration:none;
     }
 
     a{
-        color:$color-primary;
+        color: $color-important;
         text-decoration:none;
-        font-size:20px;
+        font-size:16px;
     }
 }
 
@@ -93,7 +159,6 @@ $color-text:#ffffff;
     align-items: center;
     background-color:$color-secondary;
 
-   
 
     &__list {
         list-style: none;
@@ -105,7 +170,7 @@ $color-text:#ffffff;
 
     &__item {
         margin: 0px;
-        padding: 25px;
+        padding: 2rem 1.5rem;
         color:$color-text;
         text-decoration:none;
     }
@@ -113,12 +178,14 @@ $color-text:#ffffff;
     a{
         color:$color-primary;
         text-decoration:none;
-        font-size:20px;
+        font-size:16px;
     }
 
     &__contact{
         display:flex;
         flex-direction:column;
+        align-items:center;
+        color:$color-important;
 
 
     }
