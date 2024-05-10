@@ -26,10 +26,6 @@ a{
 .menu-top{
     background-color:$color-primary;
     
-   
- 
-   
-
      .menu__checkbox{
          position:absolute;
          left:-9999px;
@@ -54,6 +50,18 @@ a{
         color:white;
     }  
 
+    .menu__toggler{
+        color:white;
+        font-size:25px;
+        margin:15px;
+    }
+
+    &__logo{
+        max-width: 350px;
+         
+        img {width: 100%; }
+    }
+
     .menu__checkbox:checked ~ .menu-top__list {
         display:block;
     }
@@ -65,6 +73,10 @@ a{
     }
 
     @media screen and (min-width:800px){
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
         .menu__toggler{
             display:none;
         }
@@ -80,94 +92,174 @@ a{
             padding: 2rem 1.5rem;
             color:$color-text;
             text-decoration:none;
-
-                border-bottom: none;
+            border-bottom: none;
         
         }
-    }
-
-   
-
-
-    @media screen and (min-width:800px){
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-
-    &__logo{
-        height:129px;
-        width:470.46px;
+        &__logo{
+            max-width: 467.46px;
+             height:129px;
+        }
        
-    }
+
+        &__logo img{
+            height:129px;
+            width:467.46px;
+        
+        }
 
 
-    a{
-        color:$color-text;
-        text-decoration:none;
-        font-size:16px;
-    }
+        a{
+            color:$color-text;
+            text-decoration:none;
+            font-size:16px;
+        }
 
    
-}
+    }   
 
 }
-
 
 
 .hero{
     background-image: url('../images/nature.jpg');
     background-size: cover; 
     background-position: center; 
-    height:600px;
+    height:23rem;
     color: white;  
     text-align: left; 
-    padding: 50px;
+    padding-right: 0px;
+    position: relative;
 
-    button{
-        background-color:$color-primary;
-        border-radius:10px;
-        padding:10px;
-        color:$color-text;
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+
+
+    .hero-content{
+        position:relative;
+        top:52%; 
+        left:50%; 
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 0 20px;
+
+        &__title{
+            font-size:2rem;
+            margin:0;
+        }
+
+        &__text{
+            font-size:1.2rem;
+        }
+
+        button{
+            background-color:$color-primary;
+            border-radius:5px;
+            padding:10px;
+            color:$color-text;
+            box-shadow: none;
+            font-size:1rem;
+            margin-top:10px;
+        }
+
+    }
+   
+
+
+        @media screen and (min-width:800px){
+        height:30rem;
+        padding-right: 50px;
+        
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        .hero-content{
+            top:40%;
+            width: 80%;
+            text-align:left;
+
+            &__title{
+                font-size:2.6rem;
+                margin:0;
+            }
+
+            &__text{
+                font-size:1.4rem;
+            }
+
+            button{
+                border-radius:5px;
+                padding:15px;
+            }
+
+        }
+    
+
     }
 }
 
-.menu-bottom{
-   
-    background-color:$color-secondary;
+
+
+.menu-bottom {
+    background-color: $color-secondary;
 
     &__list {
         list-style: none;
-        justify-content:center;
         padding: 0;
-        display: grid;
-        grid-template-columns: repeat(5, auto); /* Vytvoříme 5 sloupců s rovnoměrným rozložením */
-        gap: 0px; /* mezery mezi položkami menu */
-        
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 0;
+        width: 100%; 
     }
 
     &__item {
         margin: 0px;
         padding: 2rem 1.5rem;
-        color:$color-text;
-        text-decoration:none;
+        color: $color-text;
+        text-decoration: none;
     }
 
-    a{
+    a {
         color: $color-important;
-        text-decoration:none;
-        font-size:16px;
+        text-decoration: none;
+        font-size: 16px;
     }
-}
+
+
+
+    @media screen and (min-width:800px){
+
+    &__list {
+        justify-content:center;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        gap: 3rem;
+    }
+
+    &__item {
+        padding: 2rem 1.5rem;
+    }
+}}
+
 
 .menu-footer{
     display:flex;
-    justify-content: space-around;
+    flex-direction:column;
+    justify-content: center;
     align-items: center;
     background-color:$color-secondary;
-
-
+    
     &__list {
         list-style: none;
         margin: 0;
@@ -195,6 +287,14 @@ a{
         align-items:center;
         color:$color-important;
 
+          }
 
-    }
+          @media screen and (min-width:800px){
+            justify-content: space-around;
+            flex-direction:row;
+
+        } 
+
 }
+
+
