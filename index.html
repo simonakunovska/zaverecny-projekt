@@ -4,12 +4,11 @@ title: Hlavni strana
 ---
 
 
-    {% for prispevek in collection.blog | reverse %}
+    {% for prispevek in collections.zmeny-v-doprave | reverse %}
 <div class="clanek">
     <div class="obdelnik">
         ZMĚNA V DOPRAVĚ
         </div>
-    <img src="/images/{{ prispevek.data.foto }}" alt="{{ prispevek.data.alt }}">
     <div class="clanek__popis">
 <h2>{{ prispevek.data.title }}</h2>
 <p>{{ prispevek.data.perex }}</p>
@@ -18,12 +17,12 @@ title: Hlavni strana
 </div>
 {% endfor %}
 
-{% for prispevek in collection.aktuality | reverse %}
+{% for prispevek in collections.aktuality | reverse %}
 <div class="clanek">
     <div class="obdelnik">
         AKTUALITA
         </div>
-    <img src="/images/{{ prispevek.data.foto }}" alt="{{ prispevek.data.alt }}">
+    
     <div class="clanek__popis">
 <h2>{{ prispevek.data.title }}</h2>
 <p>{{ prispevek.data.perex }}</p>
