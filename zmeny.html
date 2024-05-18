@@ -4,16 +4,19 @@ title: Změny v dopravě
 ---
 
 
+<h2>Změny v dopravě</h2>
+
+<div class="container">
 {% for prispevek in collections.zmeny | reverse %}
-<div class="clanek">
-    <div class="obdelnik">
-        ZMĚNA V DOPRAVĚ
-        </div>
-   
+<div class="zmenyclanek {% if 'important' in prispevek.data.tags %}zmenyclanek--important
+{% elif 'secondary' in prispevek.data.tags %}zmenyclanek--secondary
+{% endif %}">
     <div class="clanek__popis">
-<h2>{{ prispevek.data.title }}</h2>
+<h3>{{ prispevek.data.title }}</h3>
 <p>{{ prispevek.data.perex }}</p>
+<p>Dotčené linky: {{ prispevek.data.note }}</p>
 <p><a href="{{ prispevek.url }}">celý článek</a></p>
     </div>
 </div>
 {% endfor %}
+</div>

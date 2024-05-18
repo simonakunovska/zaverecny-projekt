@@ -29,28 +29,28 @@
   justify-items: center;
   margin-top: 25px;
 }
-.article .article__title {
+.article__title {
   font-size: 20px;
   margin: 0;
   color: #02458C;
 }
-.article .article__meta {
+.article__meta {
   color: silver;
 }
-.article .article__perex {
+.article__perex {
   font-weight: bold;
   font-size: 1em;
 }
-.article .article__image {
+.article__image {
   display: block;
   width: 100%;
   margin-bottom: 50px;
 }
-.article .article__text {
+.article__text {
   display: grid;
   justify-items: center;
 }
-.article .article__important {
+.article__important {
   border: 1.5px solid rgba(141, 133, 133, 0.17);
   padding: 20px;
   color: rgba(255, 0, 0, 0.71);

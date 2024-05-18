@@ -32,34 +32,34 @@
   justify-items:center;
   margin-top:25px;
 
-  .article__title  {
+  &__title  {
     font-size: 20px;
     margin: 0;
     color:#02458C
   }
   
-  .article__meta {
+  &__meta {
     color: silver;
   }
   
  
-  .article__perex {
+  &__perex {
     font-weight: bold;
     font-size: 1em;
     
   }
   
-  .article__image {
+  &__image {
     display: block;
     width: 100%;
     margin-bottom:50px;
   }
 
-  .article__text{
+  &__text{
     display:grid;
   justify-items:center;
   }
-  .article__important{
+  &__important{
     border: 1.5px solid rgb(141 133 133 / 17%);
     padding: 20px;
     color: rgba(255, 0, 0, 0.71);
