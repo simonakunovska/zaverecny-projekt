@@ -1,10 +1,13 @@
 ---
 layout: layouts/zmeny.njk
 title: Přemístění zastávky Světlá nad Sázavou, potraviny
-perex: od 1.7.2024
+perex: od 1.7.2024 do 5.9.2025
 foto: bus.jpg
 alt: bus
-tags: zmeny
+tags: 
+  - important
+  - zmeny
+note: 674, 890, 896
 ---
 Vážení cestujícící, dovolujeme...........................................
 

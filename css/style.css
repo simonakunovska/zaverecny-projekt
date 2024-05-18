@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .obdelnik {
   border: 1.5px solid rgba(141, 133, 133, 0.17);
   padding: 85px;
@@ -12,34 +13,60 @@
   justify-content: center;
 }
 
-.article__title {
-  font-size: 48px;
-  margin: 0;
+.obsah {
+  display: grid;
+  place-items: center;
+}
+.obsah .obdelnik {
+  justify-self: center; /* Horizontální zarovnání obdelníku na střed */
+  align-self: start;
+  max-width: 1000px; /* Vertikální zarovnání obdelníku na začátek kontejneru */
+  padding: 70px 300px;
 }
 
-.article__meta {
+.article {
+  display: grid;
+  justify-items: center;
+  margin-top: 25px;
+}
+.article .article__title {
+  font-size: 20px;
+  margin: 0;
+  color: #02458C;
+}
+.article .article__meta {
   color: silver;
 }
-
-.article__content {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 50px;
-}
-
-.article__perex {
+.article .article__perex {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
 }
-
-.article__image {
+.article .article__image {
   display: block;
   width: 100%;
+  margin-bottom: 50px;
+}
+.article .article__text {
+  display: grid;
+  justify-items: center;
+}
+.article .article__important {
+  border: 1.5px solid rgba(141, 133, 133, 0.17);
+  padding: 20px;
+  color: rgba(255, 0, 0, 0.71);
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
   gap: 60px;
+  position: relative;
 }
 .container .clanek {
   flex: 1 1 calc(33.333% - 16px);
@@ -48,6 +75,29 @@
 .container .clanek h2 {
   font-size: 1.2em;
   margin-top: 30px;
+}
+
+.zmenyclanek {
+  flex: 1 1 calc(33.333% - 16px);
+  box-sizing: border-box;
+  border: 1.5px solid rgba(141, 133, 133, 0.17);
+  border-radius: 20px;
+  padding: 10px 10px 10px 40px;
+  position: relative;
+}
+.zmenyclanek::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 8px;
+  height: 70%;
+}
+.zmenyclanek--important::before {
+  background-color: red;
+}
+.zmenyclanek--secondary::before {
+  background-color: yellow;
 }
 
 body {
@@ -97,7 +147,7 @@ a {
 }
 .menu-top__link {
   display: block;
-  padding: 15px;
+  padding: 20px;
   text-decoration: none;
   color: white;
 }
@@ -136,7 +186,6 @@ a {
     list-style: none;
   }
   .menu-top__item {
-    padding: 2rem 1.5rem;
     color: #ffffff;
     text-decoration: none;
     border-bottom: none;

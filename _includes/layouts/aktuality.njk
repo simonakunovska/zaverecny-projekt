@@ -6,6 +6,9 @@ layout: layouts/stranka.njk
 
 <main class="main">
 
+
+<div class="obsah">
+<h2>Aktuality</h2>
 	<div class="obdelnik">
      AKTUALITA
      </div>
@@ -17,21 +20,47 @@ layout: layouts/stranka.njk
 
 	<h1 class="article__title">{{title}}</h1>
 
-	<p class="article__meta">Publikováno {{ page.date.toLocaleString('cs-CZ') }}</p>
+	
 	<div class="article__content">
 
 		<div class="article__text">
-<p class = "article__perex">{{perex}}</p>
+			<p class = "article__perex">{{perex}}</p>
 			{{content | safe}}
 
+		
+			<p class="article__meta">Publikováno {{ page.date.toLocaleString('cs-CZ') }}</p>
 		</div>
-
 		<img class="article__image" src="/images/{{foto}}" alt="{{alt}}">
 
 
 	</div>
 
-</article>
+	</article>
+
+</div>
+
+
+<h2>Aktuality</h2>
+<div class="container">
+    {% for prispevek in collections.aktuality | reverse %}
+    <div class="clanek">
+        <div class="obdelnik">
+            {% if prispevek.data.title == 'Nová výhodná 7 denní jízdenka' %}
+              NOVINKA
+            {% else %}
+              AKTUALITA
+            {% endif %}
+          </div>
+        
+        <div class="clanek__popis">
+    <h3>{{ prispevek.data.title }}</h3>
+    <p>{{ prispevek.data.perex }}</p>
+    <p><a href="{{ prispevek.url }}">celý článek</a></p>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+
 
 
 </main>

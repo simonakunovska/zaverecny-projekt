@@ -6,19 +6,29 @@ layout: layouts/stranka.njk
 
 <main class="main">
 
-<div class="obdelnik">
-     ZMĚNA V DOPRAVĚ
-     </div>
+    
+    
+    <div class="obsah">
 
-	<article class="article">
+		<h2>Změny v dopravě</h2>
+		<div class="obdelnik">
+     	 {% if 'important' in prispevek.data.tags %}
+    Výluka
+  {% elif 'secondary' in prispevek.data.tags %}
+    Mimořádnost
+  {% endif %}
+     	</div>
 
-	<h1 class="article__title">{{title}}</h1>
+		<article class="article">
 
-	<p class="article__meta">Publikováno {{ page.date.toLocaleString('cs-CZ') }}</p>
-	<div class="article__content">
+		<h1 class="article__title">{{title}}</h1>
+
+		<p class="article__important">{{ note }}</p>
+		<p class="article__meta">Publikováno {{ page.date.toLocaleString('cs-CZ') }}</p>
+		<div class="article__content">
 
 		<div class="article__text">
-<p class = "article__perex">{{perex}}</p>
+		<p class = "article__perex">{{perex}}</p>
 			{{content | safe}}
 
 		</div>
