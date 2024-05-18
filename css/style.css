@@ -1,27 +1,27 @@
-@charset "UTF-8";
-.obdelnik {
-  border: 1.5px solid rgba(141, 133, 133, 0.17);
-  padding: 85px;
+.frame {
+  border: 1.5px solid #cdebc4;
+  padding: 40px;
   color: red;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.6em;
+  font-size: 1.2em;
   text-align: center;
   border-radius: 20px;
-  max-width: 65px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .obsah {
   display: grid;
   place-items: center;
 }
-.obsah .obdelnik {
-  justify-self: center; /* Horizontální zarovnání obdelníku na střed */
+.obsah .frame {
+  justify-self: center;
   align-self: start;
-  max-width: 1000px; /* Vertikální zarovnání obdelníku na začátek kontejneru */
-  padding: 70px 300px;
+  max-width: 100%;
+  padding: 20px;
 }
 
 .article {
@@ -30,7 +30,7 @@
   margin-top: 25px;
 }
 .article__title {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   color: #02458C;
 }
@@ -44,51 +44,94 @@
 .article__image {
   display: block;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .article__text {
   display: grid;
   justify-items: center;
 }
+.article__text p {
+  align-self: center;
+}
 .article__important {
   border: 1.5px solid rgba(141, 133, 133, 0.17);
-  padding: 20px;
+  padding: 10px;
   color: rgba(255, 0, 0, 0.71);
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   border-radius: 20px;
-  max-width: 150px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .container {
   display: flex;
-  gap: 60px;
+  flex-direction: column;
+  gap: 20px;
   position: relative;
 }
 .container .clanek {
-  flex: 1 1 calc(33.333% - 16px);
+  flex: 1 1 100%;
   box-sizing: border-box;
 }
 .container .clanek h2 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-top: 30px;
 }
 
+@media (min-width: 768px) {
+  .frame {
+    padding: 85px;
+    font-size: 1.6em;
+    max-width: 65px;
+    border: 1.5px solid #e9e9e9;
+  }
+  .obsah .frame {
+    padding: 70px 300px;
+    max-width: 1000px;
+  }
+  .article__title {
+    font-size: 20px;
+  }
+  .article__image {
+    margin-bottom: 50px;
+    max-width: 30%;
+  }
+  .article__important {
+    padding: 20px;
+    font-size: 1.2em;
+    max-width: 150px;
+  }
+  .article__content {
+    display: grid;
+    justify-items: center;
+  }
+  .container {
+    flex-direction: row;
+    gap: 60px;
+  }
+  .container .clanek {
+    flex: 1 1 calc(33.333% - 16px);
+  }
+  .container .clanek h2 {
+    font-size: 1.2em;
+  }
+}
 .zmenyclanek {
   flex: 1 1 calc(33.333% - 16px);
   box-sizing: border-box;
-  border: 1.5px solid rgba(141, 133, 133, 0.17);
-  border-radius: 20px;
-  padding: 10px 10px 10px 40px;
+  border: 1.5px solid rgba(2, 69, 140, 0.2);
+  border-radius: 10px;
+  padding: 5px 5px 5px 40px;
   position: relative;
 }
 .zmenyclanek::before {
   content: "";
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 20px;
   width: 8px;
   height: 70%;
@@ -100,14 +143,85 @@
   background-color: yellow;
 }
 
+@media (min-width: 768px) {
+  .zmenyclanek {
+    box-sizing: border-box;
+    border: 1.5px solid rgba(2, 69, 140, 0.2);
+    border-radius: 20px;
+    padding: 20px 20px 20px 47px;
+  }
+  .zmenyclanek::before {
+    top: 40px;
+  }
+}
+.kalkulator,
+.mapa {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.jaktofunguje {
+  margin: 0 15px;
+}
+
+.jizdne {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+.jizdne .primarybutton {
+  border-radius: 5px;
+  padding: 20px;
+  color: #29B33F;
+  box-shadow: none;
+  font-size: 1rem;
+  margin: 30px;
+  border: 1.5px solid #29B33F;
+  text-decoration: none;
+}
+.jizdne .secondarybutton {
+  border-radius: 5px;
+  padding: 20px;
+  color: #02458C;
+  box-shadow: none;
+  font-size: 1rem;
+  margin: 30px;
+  border: 1.5px solid #29B33F;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  display: grid;
 }
 
+@media only screen and (min-width: 768px) {
+  main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+}
 main {
-  max-width: 1200px;
-  margin: 50px 105px;
+  margin: 15px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mainhomepage {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-items: stretch;
+  }
+}
+.mainhompeage {
+  margin: 15px 15px;
 }
 
 h1 {
@@ -257,7 +371,7 @@ a {
   }
   .hero .hero-content {
     top: 40%;
-    width: 80%;
+    width: 35%;
     text-align: left;
   }
   .hero .hero-content__title {
@@ -301,7 +415,7 @@ a {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(5, auto);
-    gap: 3rem;
+    gap: 6rem;
   }
   .menu-bottom__item {
     padding: 2rem 1.5rem;

@@ -29,12 +29,12 @@ title: Hlavni strana
 <div class="container">
 {% for prispevek in collections.aktuality | reverse %}
 <div class="clanek">
-    <div class="obdelnik">
-        {% if prispevek.data.title == 'Nová výhodná 7 denní jízdenka' %}
-          NOVINKA
-        {% else %}
-          AKTUALITA
-        {% endif %}
+    <div class="frame">
+        {% if 'novinky' in prispevek.data.tags %}
+        NOVINKA
+      {% elif 'dulezite' in prispevek.data.tags %}
+        DŮLEŽITÉ!
+      {% endif %}
       </div>
     
     <div class="clanek__popis">

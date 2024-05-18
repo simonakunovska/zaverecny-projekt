@@ -9,7 +9,7 @@ layout: layouts/stranka.njk
 
 <div class="obsah">
 <h2>Aktuality</h2>
-	<div class="obdelnik">
+	<div class="frame">
      AKTUALITA
      </div>
 
@@ -44,7 +44,7 @@ layout: layouts/stranka.njk
 <div class="container">
     {% for prispevek in collections.aktuality | reverse %}
     <div class="clanek">
-        <div class="obdelnik">
+        <div class="frame">
             {% if prispevek.data.title == 'Nová výhodná 7 denní jízdenka' %}
               NOVINKA
             {% else %}

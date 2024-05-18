@@ -17,12 +17,46 @@ $spacer: 1rem;
 body{
     margin:0;
     font-family:$default-font;
+    display:grid;
+
 }
 
+@media only screen and (min-width: 768px){
 main{
-    max-width:1200px;
-    margin:50px 105px;
+    
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-items:center;
+}}
+
+
+main{
+    margin:15px 15px;
 }
+
+
+@media only screen and (min-width: 768px){
+    .mainhomepage{
+        
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        justify-items:stretch;
+    }}
+    
+    
+    .mainhompeage{
+        margin:15px 15px;
+    }
+
+
+
+
+
+
+
+
 
 
 h1 { font-size: 2rem; }
@@ -195,7 +229,7 @@ a{
 
         .hero-content{
             top:40%;
-            width: 80%;
+            width: 35%;
             text-align:left;
 
             &__title{
@@ -254,7 +288,7 @@ a{
         justify-content:center;
         display: grid;
         grid-template-columns: repeat(5, auto);
-        gap: 3rem;
+        gap: 6rem;
     }
 
     &__item {

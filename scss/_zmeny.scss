@@ -1,130 +1,238 @@
-
-
-.obdelnik {
-  border: 1.5px solid rgb(141 133 133 / 17%);
-  padding: 85px;
+// Základní styly pro mobilní zařízení 
+.frame {
+  border: 1.5px solid #cdebc4;
+  padding: 40px;
   color: red;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.6em;
-  text-align:center;
-  border-radius:20px;
-  max-width:65px;
+  font-size: 1.2em;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
-  }
-  
-  .obsah {
-    display: grid;
-    place-items: center; 
+  margin-bottom:15px;
+}
 
-    .obdelnik {
-      justify-self: center; /* Horizontální zarovnání obdelníku na střed */
-      align-self: start;
-      max-width:1000px; /* Vertikální zarovnání obdelníku na začátek kontejneru */
-      padding:70px 300px;
-    }
-  }
-  
- 
-.article{
-  display:grid;
-  justify-items:center;
-  margin-top:25px;
+.obsah {
+  display: grid;
+  place-items: center;
 
-  &__title  {
-    font-size: 20px;
+  .frame {
+    justify-self: center;
+    align-self: start;
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+.article {
+  display: grid;
+  justify-items: center;
+  margin-top: 25px;
+
+  &__title {
+    font-size: 18px;
     margin: 0;
-    color:#02458C
+    color: #02458C;
   }
-  
+
   &__meta {
     color: silver;
   }
-  
- 
+
   &__perex {
     font-weight: bold;
     font-size: 1em;
-    
   }
-  
+
   &__image {
     display: block;
     width: 100%;
-    margin-bottom:50px;
+    margin-bottom: 20px;
+    margin-top:20px;
   }
 
-  &__text{
-    display:grid;
-  justify-items:center;
+  &__text {
+    display: grid;
+    justify-items: center;
+
+    p{
+      align-self:center;
+    }
   }
-  &__important{
-    border: 1.5px solid rgb(141 133 133 / 17%);
-    padding: 20px;
+
+ 
+
+  &__important {
+    border: 1.5px solid rgba(141, 133, 133, 0.17);
+    padding: 10px;
     color: rgba(255, 0, 0, 0.71);
     font-weight: bold;
-    font-size: 1.2em;
-    text-align:center;
-    border-radius:20px;
-    max-width:150px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 20px;
+    max-width: 100%;
     display: flex;
     justify-content: center;
   }
-  
 }
-  
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+
+  .clanek {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+
+    h2 {
+      font-size: 1.1em;
+      margin-top: 30px;
+    }
+  }
+}
+
+// Styly pro větší obrazovky (PC) 
+@media (min-width: 768px) {
+  .frame {
+    padding: 85px;
+    font-size: 1.6em;
+    max-width: 65px;
+    border: 1.5px solid #e9e9e9;
+  }
+
+  .obsah .frame {
+    padding: 70px 300px;
+    max-width: 1000px;
+  }
+
+  .article__title {
+    font-size: 20px;
+  }
+
+  .article__image {
+    margin-bottom: 50px;
+    max-width:30%;
+    
+  }
+
+  .article__important {
+    padding: 20px;
+    font-size: 1.2em;
+    max-width: 150px;
+  }
+
+  .article__content{
+    display:grid;
+    justify-items:center;
+  }
 
   .container {
-    display: flex;
+    flex-direction: row;
     gap: 60px;
-    position:relative;
-    
-
 
     .clanek {
-        flex: 1 1 calc(33.333% - 16px);
-         box-sizing: border-box;
-       
+      flex: 1 1 calc(33.333% - 16px);
 
-         h2{
-          font-size:1.2em;
-          margin-top:30px;
-        }
-        
+      h2 {
+        font-size: 1.2em;
+      }
     }
-    
+  }
+}
+
+
+.zmenyclanek{
+flex: 1 1 calc(33.333% - 16px);
+box-sizing: border-box;
+border: 1.5px solid rgba(2, 69, 140, 0.2);
+border-radius: 10px;
+padding: 5px 5px 5px 40px;
+position: relative;
+
+&::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 8px; 
+  height: 70%; 
   }
 
+  &--important::before {
+    background-color: red; 
+  }
   
+  &--secondary::before {
+    background-color: yellow; 
+  }
+
+
+}
+
+@media (min-width: 768px) {
   .zmenyclanek{
-    flex: 1 1 calc(33.333% - 16px);
     box-sizing: border-box;
-    border: 1.5px solid rgba(141, 133, 133, 0.17);
+    border: 1.5px solid rgba(2, 69, 140, 0.2);
     border-radius:20px;
-    padding:10px 10px 10px 40px;
-    position:relative;
-  
+    padding:20px 20px 20px 47px;
 
     &::before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    width: 8px; 
-    height: 70%; 
-    }
-
-    &--important::before {
-      background-color: red; 
-    }
+      top: 40px;
+      }
     
-    &--secondary::before {
-      background-color: yellow; 
-    }
+  }}
 
 
-
+  //stranka jak to funguje
+.kalkulator,
+.mapa {
+    max-width: 100%;
+    margin:20px 0;
+    
   }
 
-  
+  .jaktofunguje{
+
+    margin: 0 15px;
+  }
+
+//stranka jizdne a tarif
+  .jizdne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+
+    .primarybutton{
+            
+            border-radius:5px;
+            padding:20px;
+            color:#29B33F;
+            box-shadow: none;
+            font-size:1rem;
+            margin:30px;
+            border: 1.5px solid #29B33F;
+            text-decoration:none;
+    }
+
+
+    .secondarybutton{
+
+      border-radius:5px;
+      padding:20px;
+      color:#02458C;
+      box-shadow: none;
+      font-size:1rem;
+      margin:30px;
+      border: 1.5px solid #29B33F;
+      text-decoration:none;
+
+    }
+  }
