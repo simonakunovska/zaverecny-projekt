@@ -1,10 +1,15 @@
 .obdelnik {
-  border: 2px solid rgba(141, 133, 133, 0.17);
-  padding: 70px;
+  border: 1.5px solid rgba(141, 133, 133, 0.17);
+  padding: 85px;
   color: red;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.6em;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 65px;
+  display: flex;
+  justify-content: center;
 }
 
 .article__title {
@@ -32,9 +37,17 @@
   width: 100%;
 }
 
-.clanek {
+.container {
   display: flex;
-  flex-direction: column;
+  gap: 60px;
+}
+.container .clanek {
+  flex: 1 1 calc(33.333% - 16px);
+  box-sizing: border-box;
+}
+.container .clanek h2 {
+  font-size: 1.2em;
+  margin-top: 30px;
 }
 
 body {
@@ -42,16 +55,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main {
+  max-width: 1200px;
+  margin: 50px 105px;
+}
+
 h1 {
   font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  color: #02458C;
 }
 
 h3 {
   font-size: 1.2rem;
+  color: #02458C;
 }
 
 a {

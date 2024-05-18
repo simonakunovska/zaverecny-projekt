@@ -4,7 +4,7 @@ title: Přemístění zastávky Světlá nad Sázavou, potraviny
 perex: od 1.7.2024
 foto: bus.jpg
 alt: bus
-tags: zmeny-v-doprave
+tags: zmeny
 ---
 Vážení cestujícící, dovolujeme...........................................
 

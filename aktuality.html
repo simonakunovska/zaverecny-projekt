@@ -4,16 +4,23 @@ title: Aktuality
 ---
 
 
-{% for prispevek in collections.aktuality | reverse %}
-<div class="clanek">
-    <div class="obdelnik">
-        AKTUALITA
+<h2>Aktuality</h2>
+<div class="container">
+    {% for prispevek in collections.aktuality | reverse %}
+    <div class="clanek">
+        <div class="obdelnik">
+            {% if prispevek.data.title == 'Nová výhodná 7 denní jízdenka' %}
+              NOVINKA
+            {% else %}
+              AKTUALITA
+            {% endif %}
+          </div>
+        
+        <div class="clanek__popis">
+    <h3>{{ prispevek.data.title }}</h3>
+    <p>{{ prispevek.data.perex }}</p>
+    <p><a href="{{ prispevek.url }}">celý článek</a></p>
         </div>
- 
-    <div class="clanek__popis">
-<h2>{{ prispevek.data.title }}</h2>
-<p>{{ prispevek.data.perex }}</p>
-<p><a href="{{ prispevek.url }}">celý článek</a></p>
     </div>
-</div>
-{% endfor %}
+    {% endfor %}
+    </div>
